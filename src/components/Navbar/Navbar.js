@@ -6,14 +6,16 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import IconButton from '@mui/material/IconButton';
 import { mainNavbarItems } from '../consts/navbarListItems';
 import { navbarStyles } from './styles';
 import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
 
-   
-    // const navigate = useNavigate();
+
+    const navigate = useNavigate();
 
     return (
 
@@ -27,14 +29,21 @@ const Navbar = () => {
             <List>
                 {mainNavbarItems.map(({ id, icon, label, route }) => (
                     <ListItem key={id} disablePadding
-                        onClick={() => console.log(route)}>
+                        onClick={() => navigate(route)}>
                         <ListItemButton>
                             {icon}
-                            <ListItemText primary={label} sx={{fontWeight: 700}} />
+                            <ListItemText primary={label} sx={{ fontWeight: 700 }} />
                         </ListItemButton>
                     </ListItem>
                 ))}
             </List>
+            <Divider />
+
+            <div>
+                <IconButton sx={{ color: 'rgb(139, 161, 192)', ml:'5px' }}
+                onClick={() => navigate('settings')}
+                ><SettingsOutlinedIcon /></IconButton>
+            </div>
 
         </Drawer>
     )

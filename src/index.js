@@ -5,12 +5,24 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from '@mui/material';
 import theme from './theme';
+import { BrowserRouter, Outlet, Routes, Route } from "react-router-dom";
+import Customers from './components/pages/Customers/Customers';
+import Settings from './components/pages/Settings/Settings';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <App />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<App />}>
+            <Route path="teacher/customers" element={<Customers/>}></Route>
+            <Route path="settings" element={<Settings/>}></Route>
+
+          </Route>
+
+        </Routes>
+      </BrowserRouter>
     </ThemeProvider>
   </React.StrictMode>
 );
