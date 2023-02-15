@@ -1,10 +1,9 @@
-const drawerWidth = 240;
+export const drawerWidth = 240;
 
 export const navbarStyles = {
 
     drawer: {
 
-        width: drawerWidth,
         flexShrink: 0,
         '& .MuiDrawer-paper': {
             backgroundColor: '#192233',
@@ -16,15 +15,19 @@ export const navbarStyles = {
         },
 
         '& .MuiSvgIcon-root': {
-            mr: '15px',
+           
         },
 
+        '& .MuiSvgIcon-root:hover': {
+            color: 'rgb(0, 113, 255)',
+        },
         '&  .MuiTypography-root': {
+            ml: '15px',
             fontSize: '14px',
             fontWeight: 600
         },
 
-        '&  .MuiTypography-root:hover': {
+        '&  .MuiButtonBase-root:hover': {
             color: 'rgb(0, 113, 255)',
         },
 

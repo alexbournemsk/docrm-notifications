@@ -8,9 +8,11 @@ import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
 import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
 import IconButton from '@mui/material/IconButton';
+import { Grid } from '@mui/material';
 import { mainNavbarItems } from '../consts/navbarListItems';
 import { navbarStyles } from './styles';
 import { useNavigate } from 'react-router-dom';
+import { drawerWidth } from './styles';
 
 const Navbar = () => {
 
@@ -18,7 +20,7 @@ const Navbar = () => {
     const navigate = useNavigate();
 
     return (
-
+        <Grid item style={{width:drawerWidth}}>
         <Drawer
             sx={navbarStyles.drawer}
             variant="permanent"
@@ -46,6 +48,7 @@ const Navbar = () => {
             </div>
 
         </Drawer>
+        </Grid>
     )
 }
 
