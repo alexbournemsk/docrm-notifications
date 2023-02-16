@@ -3,79 +3,46 @@ import { FormControlLabel, Grid, Switch } from '@mui/material';
 import { Paper } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
-import WhatsAppIcon from '@mui/icons-material/WhatsApp';
-import EmailIcon from '@mui/icons-material/Email';
-import SmsIcon from '@mui/icons-material/Sms';
+import InfoIcon from '@mui/icons-material/Info';
+import { useState } from 'react';
+import ChannelIcons from '../ChannelIcons/ChannelIcons';
+import {styles} from '../NotificationCard/styles.js'
 
-const styles = {
-    cardHeader: {
-        fontSize: '20px',
-        fontWeight: 600,
-        lineHeight: 1.33
-    }
-}
 
 export default function NotificationCard() {
+    const [cardActive, cardSetActive] = useState(1);
+    const handleClick = () => {
+        cardSetActive(!cardActive);
+    }
+    const activeToggleStyle = cardActive ? styles.enabled : styles.disabled;
     return (
         <Paper
             sx={{
                 mt: '20px',
-                pt: '35px',
-                pl: '35px',
-                pr: '25px',
-                pb: '15px',
+                pt: '35px', pl: '35px', pr: '25px', pb: '15px',
                 borderRadius: '12px',
             }}>
             <div style={{
                 display: 'flex',
                 justifyContent: 'space-between',
             }}>
-                <FormControlLabel control={<Switch defaultChecked />} label="" />
+                <FormControlLabel control={<Switch defaultChecked onClick={handleClick} />} label="" />
                 <IconButton>
                     <EditIcon />
                 </IconButton>
             </div>
 
-            <div>
-                <div style={styles.cardHeader}>Напоминание о регулярном уроке </div>
-                <div style={{
-                    backgroundColor: '#F1F5F6',
-                    fontSize: '15px',
-                    fontWeight: 'light',
-                    lineHeight: 1.33,
-                    marginTop: '20px',
-                    marginBottom: '30px',
-                    paddingTop: '10px',
-                    paddingLeft: '15px',
-                    paddingBottom: '10px',
-                    borderRadius: '5px',
-                }}>
+            <div style={{
+                ...activeToggleStyle
+            }}>
+                <div style={{ ...styles.cardHeader }}>Напоминание о регулярном уроке </div>
+                <div style={{ ...styles.cloudInfo }}>
+                    <InfoIcon sx={{color: '#bbb', fontSize: '16px'}}/>
                     Отправляется для регулярного урока в 15:00 дня, предшествующего уроку, или немного позднее, в режиме очереди.
                 </div>
 
-                <div style={{
-                    display: 'inline',
-                    position: 'relative',
-                }}>
-                    <WhatsAppIcon sx={{
-                        color: 'green',
-                        pr: '5px',
-                    }} />
-                    <EmailIcon sx={{
-                        color: '#F6B445',
-                        pr: '5px',
 
-                    }} />
-                    <SmsIcon sx={{
-                        color: '#2196F3',
-                        position: 'absolute',
-                        top: '-5px',
-                        pr: '5px',
-
-                    }} />
-                </div>
-
-                <div style={{
+                {/* <div style={{
                     display: 'flex',
                     justifyContent: 'space-between',
                     marginTop: '20px',
@@ -83,39 +50,26 @@ export default function NotificationCard() {
                     <div style={{
                         display: 'flex',
                     }}>
-                        {/* <CheckCircleIcon sx={{
-                    color: '#4bae4f',
-                    pr: '5px',
-                }} /> */}
+
                         В первый доступный канал: да
 
                     </div>
 
                     <div style={{
-                        color: '#ccc',
+                        opacity: '50%',
                         fontWeight: 'normal',
                     }}>Сокращённый шаблон sms: нет</div>
 
                     <div>Тема для email: "Напоминание об уроке"
                     </div>
-                </div>
+                </div> */}
 
                 <div style={{
                     marginTop: '20px',
                 }}>Привязан шаблон:
                 </div>
 
-                <div style={{
-                    backgroundColor: '#F1F5F6',
-                    fontSize: '15px',
-                    fontWeight: 'light',
-                    lineHeight: 1.73,
-                    marginBottom: '30px',
-                    paddingTop: '10px',
-                    paddingLeft: '15px',
-                    paddingBottom: '10px',
-                    borderRadius: '5px',
-                }}>
+                <div style={{...styles.cloudMessage}}>
 
                     <div
                         style={{
@@ -127,10 +81,13 @@ export default function NotificationCard() {
                     </div>
                     <div style={{
                         fontSize: '9px',
-                        color: '#aaa'
+                        color: '#aaa',
+                        marginBottom:'10px'
                     }}>
                         notification_oferta_08_12_22
                     </div>
+                    <ChannelIcons />
+
                 </div>
             </div>
         </Paper>
