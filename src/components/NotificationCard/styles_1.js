@@ -1,18 +1,18 @@
 export const styles = {
     cardHeader: {
-        fontSize: '20px',
+        fontSize: '15px',
         fontWeight: 600,
         lineHeight: 1.33
     },
 
     cloudMessage: {
         backgroundColor: '#F1F5F6',
-        fontSize: '15px',
+        fontSize: '13px',
         fontWeight: 'light',
-        lineHeight: 1.33,
+        lineHeight: 1.5,
         marginTop: '5px',
         marginBottom: '30px',
-        paddingTop: '20px',
+        paddingTop: '10px',
         paddingLeft: '20px',
         paddingBottom: '10px',
         borderRadius: '5px',
@@ -28,7 +28,7 @@ export const styles = {
         fontWeight: 'light',
         lineHeight: 1.33,
         marginTop: '10px',
-        marginBottom: '30px',
+        marginBottom: '20px',
         paddingTop: '10px',
         paddingLeft: '15px',
         paddingBottom: '10px',

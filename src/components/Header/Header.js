@@ -5,7 +5,7 @@ import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const menu = [
     'Общие',
-    'Нотификации',
+    'Уведомления',
     'Редактор шаблонов',
     'Классификаторы',
     'Отображение для клиента',
@@ -26,7 +26,7 @@ export default function Header() {
                     fontWeight: 600,
                     lineHeight: 1.33
                 }}
-                >Настройки нотификаций</div>
+                >Настройка уведомлений</div>
 
 
                 <div style={{
@@ -62,13 +62,15 @@ export default function Header() {
 
             }}>
 
-                {menu.map((item) => (
+                {menu.map((item, index) => (
                     <div style={{
                         marginRight: '20px',
                         fontSize: '14px',
                         fontWeight: 700,
                         color: 'rgb(25, 34, 51)'
-                    }}>{item}</div>
+                    }}
+                    key={index}
+                    >{item}</div>
                 ))}
 
             </div>

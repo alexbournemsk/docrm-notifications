@@ -13,11 +13,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
+      <BrowserRouter basename="/docrm/">
         <Routes>
           <Route path="/" element={<App />}>
             <Route path="teacher/customers" element={<Customers/>}></Route>
-            <Route path="settings" element={<Settings/>}></Route>
+            {/* <Route path="settings" element={<Settings/>}></Route> */}
 
           </Route>
 

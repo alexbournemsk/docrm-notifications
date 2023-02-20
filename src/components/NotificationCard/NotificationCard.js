@@ -1,16 +1,16 @@
 import React from 'react';
-import { FormControlLabel, Grid, Switch } from '@mui/material';
+import { FormControlLabel, Grid, Switch, Tooltip } from '@mui/material';
 import { Paper } from '@mui/material';
 import IconButton from '@mui/material/IconButton';
 import EditIcon from '@mui/icons-material/Edit';
 import InfoIcon from '@mui/icons-material/Info';
 import { useState } from 'react';
 import ChannelIcons from '../ChannelIcons/ChannelIcons';
-import {styles} from '../NotificationCard/styles.js'
+import { styles } from './styles_1.js';
 
 
-export default function NotificationCard() {
-    const [cardActive, cardSetActive] = useState(1);
+export default function NotificationCard({ data }) {
+    const [cardActive, cardSetActive] = useState(data.isActive);
     const handleClick = () => {
         cardSetActive(!cardActive);
     }
@@ -19,26 +19,33 @@ export default function NotificationCard() {
         <Paper
             sx={{
                 mt: '20px',
-                pt: '35px', pl: '35px', pr: '25px', pb: '15px',
+                pt: '15px', pl: '35px', pr: '25px', pb: '1px',
                 borderRadius: '12px',
             }}>
             <div style={{
                 display: 'flex',
                 justifyContent: 'space-between',
             }}>
-                <FormControlLabel control={<Switch defaultChecked onClick={handleClick} />} label="" />
+                <Tooltip title={cardActive ? 'Уведомление активно' : 'Уведомление выключено'} placement="top">
+                    <FormControlLabel control={
+                        <Switch
+                            sx={{ ml: '5px' }}
+                            checked={cardActive}
+                            onClick={handleClick}
+                            size='small'
+                        />} label="" />
+                </Tooltip>
                 <IconButton>
                     <EditIcon />
                 </IconButton>
             </div>
-
             <div style={{
                 ...activeToggleStyle
             }}>
-                <div style={{ ...styles.cardHeader }}>Напоминание о регулярном уроке </div>
+                <div style={{ ...styles.cardHeader }}>{data.notificationHeader} </div>
                 <div style={{ ...styles.cloudInfo }}>
-                    <InfoIcon sx={{color: '#bbb', fontSize: '16px'}}/>
-                    Отправляется для регулярного урока в 15:00 дня, предшествующего уроку, или немного позднее, в режиме очереди.
+                    <InfoIcon sx={{ color: '#bbb', fontSize: '16px' }} />
+                    {data.notificationDescription}
                 </div>
 
 
@@ -64,31 +71,43 @@ export default function NotificationCard() {
                     </div>
                 </div> */}
 
-                <div style={{
-                    marginTop: '20px',
+                {/* <div style={{
                 }}>Привязан шаблон:
-                </div>
+                </div> */}
 
-                <div style={{...styles.cloudMessage}}>
+                {cardActive &&
+                    <div style={{ ...styles.cloudMessage }}>
 
-                    <div
-                        style={{
-                            fontWeight: 'bold',
-                        }}>Напоминание об очередном уроке
-                    </div>
-                    <div>
-                        Добрый день! Это Ольга, ваш куратор из школы музыки Guitardo😊 Пишу напомнить, что у вас занятие {`{date}`} в {`{time}`} на {`{lessonName}`} Если все верно, напишите «+» или любой смайлик🤍
-                    </div>
-                    <div style={{
-                        fontSize: '9px',
-                        color: '#aaa',
-                        marginBottom:'10px'
-                    }}>
-                        notification_oferta_08_12_22
-                    </div>
-                    <ChannelIcons />
+                        <Tooltip title='Шаблон, который привязан к уведомлению' placement='top-start'>
+                            <div
+                                style={{
+                                    fontWeight: 'bold',
+                                }}>{data.templateHeader}
+                            </div>
+                        </Tooltip>
 
-                </div>
+                        <div>
+                            {data.templateText}
+                        </div>
+
+                        <Tooltip title='Waba ID' placement='left'>
+                            <div style={{
+                                fontSize: '9px',
+                                color: '#aaa',
+                                marginBottom: '20px'
+                            }}>
+
+                                {data.templateWabaID}
+                            </div>
+                        </Tooltip>
+                        <ChannelIcons
+                            iconsSize={'20px'}
+                            sendToFirstAvailable={data.sendToFirstAvailable}
+                            sendingChannels={data.sendingChannels} />
+
+                    </div>
+                }
+
             </div>
         </Paper>
     )
