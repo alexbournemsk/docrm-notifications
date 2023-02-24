@@ -14,10 +14,6 @@ export const navbarStyles = {
             fontSize: 26
         },
 
-        '& .MuiSvgIcon-root': {
-           
-        },
-
         '& .MuiSvgIcon-root:hover': {
             color: 'rgb(0, 113, 255)',
         },

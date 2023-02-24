@@ -1,6 +1,5 @@
 import React from 'react';
-import { Typography } from '@mui/material';
-import TextField from '@mui/material/TextField';
+import { headerStyles } from './styles';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 
 const menu = [
@@ -11,65 +10,31 @@ const menu = [
     'Отображение для клиента',
 ];
 
-export default function Header() {
+export default function Header({ pageTitle }) {
     return (
         <>
-            <div style={{
-                gridColumn: '1 /span 12',
-                display: 'flex',
-                justifyContent: 'space-between',
-                alignItems: 'center'
-            }}
-            >
-                <div style={{
-                    fontSize: '30px',
-                    fontWeight: 600,
-                    lineHeight: 1.33
-                }}
-                >Настройка уведомлений</div>
+            <div style={headerStyles.top}>
+                <div style={headerStyles.title}>{pageTitle}</div>
 
+                <div style={headerStyles.searchAndProfile}>
+                    <input
+                        type="text"
+                        placeholder='Поиск клиентов по номеру и ФИО'
+                        id="inputID"
+                        style={headerStyles.searchInput} />
 
-                <div style={{
-                    textAlign: 'right',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '10px'
-                }}>
-                    <input type="text" placeholder='Поиск клиентов по номеру и ФИО' id="inputID" style={{
-                        minWidth: '250px',
-                        marginRight: '20px',
-                        borderRadius: '30px',
-                        border: '0',
-                        padding: '12px'
-                    }} />
-
-                    <div style={{
-                        fontSize: '12px',
-                        fontWeight: 'normal',
-                    }}
+                    <div style={headerStyles.profile}
                     >Джек Блэк<br />
                         Руководитель школы</div>
                     <AccountCircleIcon sx={{ fontSize: 50, color: '#999' }} />
                 </div>
             </div>
 
-            <div style={{
-                marginTop: '10px',
-                paddingBottom: '12px',
-                gridColumn: '1 /span 12',
-                display: 'flex',
-                borderBottom: '1px solid #c8cace',
-
-            }}>
+            <div style={headerStyles.navigation}>
 
                 {menu.map((item, index) => (
-                    <div style={{
-                        marginRight: '20px',
-                        fontSize: '14px',
-                        fontWeight: 700,
-                        color: 'rgb(25, 34, 51)'
-                    }}
-                    key={index}
+                    <div style={headerStyles.navigationItem}
+                        key={index}
                     >{item}</div>
                 ))}
 

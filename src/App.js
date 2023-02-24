@@ -10,8 +10,7 @@ function App() {
   return (
     <Grid container>
       <Navbar />
-      {/* <Outlet /> */}
-      <Settings />
+      <Outlet />
     </Grid>
   );
 }
