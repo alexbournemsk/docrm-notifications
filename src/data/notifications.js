@@ -28,6 +28,7 @@ export const notifications = [
         smsTemplate: '',
         emailHeader: '',
         emailTemplate: '',
+        category: 'system',
     },
 
     {

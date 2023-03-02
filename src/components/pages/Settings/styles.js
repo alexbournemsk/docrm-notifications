@@ -9,6 +9,6 @@ export const settingsStyles = {
         minHeight: '100vh',
         backgroundColor: 'rgb(227, 228, 230)',
         display: 'grid',
-        gridTemplateRows: 'auto auto 1fr',
+        gridTemplateRows: 'auto auto auto 1fr',
         gridTemplateColumns: 'repeat(12, 1fr)'
 }
