@@ -1,22 +1,28 @@
 import React from 'react';
-import { Button } from '@mui/material';
+import FilterButton from '../FilterButton/FilterButton';
 
-export default function FilterButtons({ handleFilter, filterReset }) {
+export default function FilterMenu({ handleFilter, filterReset, activeFilter }) {
   return (
-    <div>
-      <Button
-        variant="outlined"
-        size="small"
-        onClick={handleFilter}
-        sx={{
-          borderRadius: '40px',
-          backgroundColor: '#c8cace66',
-          fontSize: '12px',
-          textTransform: 'none'
+    <div
+      style={{
+        marginTop: '15px',
+        marginBottom: '15px',
+        display: 'flex',
+        gap: '15px'
+      }}
+    >     
 
-        }}
-      >Фильтровать</Button>
-      <Button variant="contained" onClick={filterReset}>Сброс</Button>
+      <FilterButton
+        onClickHandler={filterReset}  isActive={activeFilter === ''}
+      >
+        Все
+      </FilterButton>
+
+      <FilterButton
+        onClickHandler={handleFilter} isActive={activeFilter === 'system'}
+      >
+        Системные
+      </FilterButton>
 
     </div>
   )
