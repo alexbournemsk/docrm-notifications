@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import Header from '../../Header/Header';
-import { data } from '../../../consts/data';
-import Filter from '../../Filter/Filter.js';
-import FilterTable from '../../FilterTable/FilterTable';
+import Header from '../../components/Header/Header';
+import { data } from '../../consts/data';
+import Filter from '../../components/Filter/Filter';
+import FilterTable from '../../components/FilterTable/FilterTable';
 import { filterPagesStyles } from './styles';
 
 

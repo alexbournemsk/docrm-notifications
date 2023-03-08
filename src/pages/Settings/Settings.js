@@ -1,9 +1,9 @@
 import {React, useState} from 'react';
-import Header from '../../Header/Header';
-import NotificationCard from '../../NotificationCard/NotificationCard';
-import { notifications } from '../../../data/notifications.js'
+import Header from '../../components/Header/Header';
+import NotificationCard from '../../components/NotificationCard/NotificationCard';
+import { notifications } from '../../data/notifications.js'
 import { settingsStyles } from './styles';
-import FilterMenu from '../../FilterMenu/FilterMenu';
+import FilterMenu from '../../components/FilterMenu/FilterMenu';
 
 
 const data = notifications;

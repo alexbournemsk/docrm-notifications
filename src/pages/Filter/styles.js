@@ -1,4 +1,4 @@
-import { drawerWidth } from '../../Navbar/styles';
+import { drawerWidth } from '../../components/Navbar/styles';
 
 export const filterPagesStyles = {
     paddingLeft: drawerWidth + 20,
@@ -9,7 +9,6 @@ export const filterPagesStyles = {
     minHeight: '100vh',
     display: 'grid',
     backgroundColor: 'rgb(227, 228, 230)',
-    display: 'grid',
     gridTemplateRows: 'auto auto 1fr',
     gridTemplateColumns: 'repeat(12, 1fr)'
 }

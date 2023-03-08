@@ -1,4 +1,4 @@
-import { drawerWidth } from '../../Navbar/styles';
+import { drawerWidth } from '../../components/Navbar/styles';
 
 export const settingsStyles = {
         paddingLeft: drawerWidth + 20,

@@ -1,6 +1,5 @@
 import React from 'react';
 import FilterButton from '../FilterButton/FilterButton';
-import { Tooltip } from '@mui/material';
 
 
 export default function FilterMenu({ handleFilter, filterReset, activeFilter }) {

@@ -4,10 +4,10 @@ import './index.css';
 import App from './App';
 import { ThemeProvider } from '@mui/material';
 import theme from './theme';
-import { BrowserRouter, Outlet, Routes, Route } from "react-router-dom";
-import Customers from './components/pages/Customers/Customers';
-import Settings from './components/pages/Settings/Settings';
-import FilterPage from './components/pages/Filter/FilterPage';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Customers from './pages/Customers/Customers';
+import Settings from './pages/Settings/Settings';
+import FilterPage from './pages/Filter/FilterPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
