@@ -7,6 +7,7 @@ export const buttonStyles = {
     backgroundColor: '#c8cace66',
     fontSize: '12px',
     textTransform: 'none',
+    fontWeight: '700',
 
     '&:hover': {
         backgroundColor: '#0071ff',

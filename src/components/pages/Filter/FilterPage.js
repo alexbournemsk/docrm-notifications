@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Header from '../../Header/Header';
-import { data } from '../../consts/data';
+import { data } from '../../../consts/data';
 import Filter from '../../Filter/Filter.js';
 import FilterTable from '../../FilterTable/FilterTable';
 import { filterPagesStyles } from './styles';

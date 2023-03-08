@@ -13,6 +13,8 @@ export const notifications = [
         smsTemplate: '',
         emailHeader: '',
         emailTemplate: '',
+        category: 'system',
+
     },
 
     {
@@ -44,6 +46,8 @@ export const notifications = [
         smsTemplate: '',
         emailHeader: '',
         emailTemplate: '',
+        category: 'system',
+
     },
 
 
@@ -61,5 +65,58 @@ export const notifications = [
         smsTemplate: '',
         emailHeader: '',
         emailTemplate: '',
+        category: 'system',
+
+    },
+
+    {
+        id: 4,
+        isActive: true,
+        notificationHeader: "Вокал • Акционный индивидуальный онлайн урок по вокалу",
+        notificationDescription: "Отправляется за 5 минут до урока",
+        templateHeader: "Уведомление о записи на промо урок",
+        templateText: "Ваш урок пройдет сегодня по ссылке: {auditoryLink} Начало урока в {time}",
+        templateWabaID: "online_lesson_notification_01_2023",
+        sendingChannels: ['wa', false, false],
+        sendToFirstAvailable: false,
+        smsTemplate: '',
+        emailHeader: '',
+        emailTemplate: '',
+        category: 'вокал',
+
+    },
+
+    {
+        id: 5,
+        isActive: true,
+        notificationHeader: "Гитара • Акционный индивидуальный онлайн урок по гитаре",
+        notificationDescription: "Отправляется за 1 час до урока",
+        templateHeader: "Уведомление об уроке с онлайн ссылкой",
+        templateText: "Добрый день! Это Ольга, ваш куратор из школы музыки Guitardo😊 Пишу напомнить, что у вас {date} в {time} {lessonName}. Если все верно, напишите «+» или любой смайлик🤍",
+        templateWabaID: "online_lesson_notification_01_2023",
+        sendingChannels: ['wa', 'email', 'sms'],
+        sendToFirstAvailable: false,
+        smsTemplate: '',
+        emailHeader: '',
+        emailTemplate: '',
+        category: 'гитара',
+
+    },
+
+    {
+        id: 6,
+        isActive: true,
+        notificationHeader: "Гитара • Акционный индивидуальный онлайн урок по гитаре",
+        notificationDescription: "Отправляется за 1 день 13 часов до урока",
+        templateHeader: "Уведомление об уроке с онлайн ссылкой",
+        templateText: "Добрый день! Это Ольга, ваш куратор из школы музыки Guitardo😊 Пишу напомнить, что у вас {date} в {time} {lessonName}. Если все верно, напишите «+» или любой смайлик🤍",
+        templateWabaID: "",
+        sendingChannels: ['wa', 'email', 'sms'],
+        sendToFirstAvailable: false,
+        smsTemplate: '',
+        emailHeader: '',
+        emailTemplate: '',
+        category: 'гитара',
+
     },
 ]

@@ -1,5 +1,7 @@
 import React from 'react';
 import FilterButton from '../FilterButton/FilterButton';
+import { Tooltip } from '@mui/material';
+
 
 export default function FilterMenu({ handleFilter, filterReset, activeFilter }) {
   return (
@@ -12,16 +14,55 @@ export default function FilterMenu({ handleFilter, filterReset, activeFilter }) 
       }}
     >     
 
-      <FilterButton
-        onClickHandler={filterReset}  isActive={activeFilter === ''}
+<FilterButton
+        onClickHandler={filterReset}
+        isActive={activeFilter === ''}
       >
         Все
       </FilterButton>
 
       <FilterButton
-        onClickHandler={handleFilter} isActive={activeFilter === 'system'}
+      sx={{fontWeight:'700'}}
+        onClickHandler={() => handleFilter('system')}
+        isActive={activeFilter === 'system'}
       >
         Системные
+      </FilterButton>
+
+      <FilterButton
+        onClickHandler={() => handleFilter('вокал')}
+        isActive={activeFilter === 'вокал'}
+        isProgramNotification = 'true'
+      >
+        Вокал
+      </FilterButton>
+
+      <FilterButton
+        onClickHandler={() => handleFilter('гитара')}
+        isActive={activeFilter === 'гитара'}
+        isProgramNotification = 'true'
+
+      >
+        Гитара
+      </FilterButton>
+
+
+      <FilterButton
+        onClickHandler={() => handleFilter('фортепиано')}
+        isActive={activeFilter === 'фортепиано'}
+        isProgramNotification = 'true'
+
+      >
+        Фортепиано
+      </FilterButton>
+
+      <FilterButton
+        onClickHandler={() => handleFilter('барабаны')}
+        isActive={activeFilter === 'барабаны'}
+        isProgramNotification = 'true'
+
+      >
+        Барабаны
       </FilterButton>
 
     </div>
